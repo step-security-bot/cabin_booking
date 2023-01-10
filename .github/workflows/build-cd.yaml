@@ -46,6 +46,11 @@ jobs:
     if: github.event.inputs.build_ios == 'true'
 
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@ebacdc22ef6c2cfb85ee5ded8f2e640f4c776dd5 # v2.0.0
+        with:
+          egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
+
       - uses: actions/checkout@b56e6a3d768b11aef1d4c73977caf6413c0d74c8 # v3
         with:
           fetch-depth: "0"
@@ -99,6 +104,11 @@ jobs:
     if: github.event.inputs.build_android == 'true'
 
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@ebacdc22ef6c2cfb85ee5ded8f2e640f4c776dd5 # v2.0.0
+        with:
+          egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
+
       - uses: actions/checkout@b56e6a3d768b11aef1d4c73977caf6413c0d74c8 # v3
         with:
           fetch-depth: "0"
@@ -156,6 +166,11 @@ jobs:
     if: github.event.inputs.build_macos == 'true'
 
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@ebacdc22ef6c2cfb85ee5ded8f2e640f4c776dd5 # v2.0.0
+        with:
+          egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
+
       - uses: actions/checkout@b56e6a3d768b11aef1d4c73977caf6413c0d74c8 # v3
         with:
           fetch-depth: "0"
@@ -211,6 +226,11 @@ jobs:
     if: github.event.inputs.build_windows == 'true'
 
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@ebacdc22ef6c2cfb85ee5ded8f2e640f4c776dd5 # v2.0.0
+        with:
+          egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
+
       - uses: actions/checkout@b56e6a3d768b11aef1d4c73977caf6413c0d74c8 # v3
         with:
           fetch-depth: "0"
